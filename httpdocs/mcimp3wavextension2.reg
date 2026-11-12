@@ -1,0 +1,12 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MCI32]
+"WaveAudio"="mciwave.dll"
+"MPEGVideo"="mciqtz32.dll"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MCI]
+"WaveAudio"="mciwave.drv"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MCI Extensions]
+"mp3"="MPEGVideo"
+"wav"="WaveAudio"
