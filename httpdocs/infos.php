@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deine Webseite</title>
+<title>Classic Card Games 3D</title>
 <style>
   body {
     background: url(verlauf.jpg);
@@ -43,6 +43,12 @@
     width: 450px;
     height: 259px;
   }
+  /* Per Anker angesprungenes Spiel (z. B. #thirtyone von Steam) hervorheben */
+  .card:target img {
+    outline: 4px solid white;
+    outline-offset: 2px;
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.8);
+  }
   .footer {
     background-color: white;
     width: 100%;
@@ -67,37 +73,37 @@
   </div>
   <div class="cards-container">
     <!-- Premium-Kartenspiele hier -->
-    <div class="card">
+    <div class="card" id="hearts">
       <a href="https://store.steampowered.com/app/1178520/" target="_blank">
         <img src="kapsel4_hearts.jpg" width="450" height="259" alt="Hearts">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="rummy">
       <a href="https://store.steampowered.com/app/1029900/" target="_blank">
         <img src="kapsel4_rummy.jpg" width="450" height="259" alt="Rummy">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="canasta">
       <a href="https://store.steampowered.com/app/966090/" target="_blank">
         <img src="kapsel4_canasta.jpg" width="450" height="259" alt="Canasta">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="ginrummy">
       <a href="https://store.steampowered.com/app/1178510/" target="_blank">
         <img src="kapsel4_ginrummy.jpg" width="450" height="259" alt="Gin Rummy">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="skat">
       <a href="https://store.steampowered.com/app/1070770/" target="_blank">
         <img src="kapsel4_skat.jpg" width="450" height="259" alt="Skat">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="crazyeights">
       <a href="https://store.steampowered.com/app/1178500/" target="_blank">
         <img src="kapsel4_crazy8s.jpg" width="450" height="259" alt="Crazy 8s">
       </a>
     </div>
-    <div class="card">
+    <div class="card" id="thirtyone">
       <a href="https://store.steampowered.com/app/1178530/" target="_blank">
         <img src="kapsel4_thirtyone.jpg" width="450" height="259" alt="Thirty One">
       </a>

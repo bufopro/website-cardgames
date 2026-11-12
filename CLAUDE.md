@@ -14,7 +14,7 @@ Details zum Ist-Stand: [docs/ANALYSE.md](docs/ANALYSE.md).
 ## Harte Regeln
 - **Bestehende URLs und Anker dürfen nicht brechen.** Steam, Stores und alte Links verweisen darauf. Insbesondere:
   - `/cardgames/`, `/cardgames/index.php`, `/cardgames/infos.php` und alle bestehenden Dateien (auch scheinbar ungenutzte wie `dkd10x.exe`, `*.reg`, Bilder) bleiben erreichbar.
-  - Steam-Anker (exakt so, im obersten Dokument unter `/cardgames/`): `#hearts`, `#rummy`, `#canasta`, `#ginrummy`, `#skat`, `#crazyeights`, `#thirtyone`. Sie existieren heute nicht. Wenn sie eingeführt werden, nie wieder umbenennen.
+  - Steam-Anker (exakt so, im obersten Dokument unter `/cardgames/`): `#hearts`, `#rummy`, `#canasta`, `#ginrummy`, `#skat`, `#crazyeights`, `#thirtyone`. Sie sitzen als `id` auf den `.card`-Divs in `infos.php`, das `index.php` per `include` ausgibt (kein Frameset mehr). Nie umbenennen oder entfernen.
 - **Keine Build-Toolchain** (kein npm, kein Bundler, kein Präprozessor). Das Ergebnis bleibt aus reinen Dateien, die per SFTP deploybar sind.
 - **Kleine, thematische Commits.**
 - Antworten an den Nutzer: **Deutsch, knapp.**
