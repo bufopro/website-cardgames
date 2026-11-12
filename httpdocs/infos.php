@@ -6,7 +6,8 @@
 <title>Classic Card Games 3D</title>
 <style>
   body {
-    background: url(verlauf.jpg);
+    /* Verlauf ist 2000 px hoch; darunter in der Endfarbe weiter statt neu anfangen (lange Mobilseite) */
+    background: #626bba url(verlauf.jpg) repeat-x;
     margin: 0;
     padding: 0;
     color: white; /* Textfarbe auf weiß ändern */
@@ -16,9 +17,18 @@
     margin: 0 auto;
     padding: 20px;
   }
+  /* Bilder nie breiter als ihr Platz (Mobil) */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h1, h2 {
+    text-wrap: balance; /* gleichmäßige Zeilen beim Umbruch (Mobil) */
+  }
   .title {
     font-family: Verdana, Arial, sans-serif;
-    font-size: 64px;
+    font-size: 64px; /* Rückfallwert für Browser ohne clamp() */
+    font-size: clamp(32px, 8vw, 64px); /* ab 800 px Fensterbreite wie bisher 64px */
     font-variant: small-caps;
     text-align: center;
     color: white; /* Überschriftsfarbe auf weiß ändern */
@@ -38,10 +48,18 @@
   }
   .card {
     margin: 10px;
+    max-width: calc(100% - 20px);
+    scroll-margin-top: 16px; /* Abstand nach oben beim Ansprung per Anker, Rahmen bleibt sichtbar */
   }
   .card img {
     width: 450px;
-    height: 259px;
+    height: auto;
+    aspect-ratio: 450 / 259; /* gleiche Proportion wie bisher 450x259, auch wenn schmaler */
+  }
+  @media (max-width: 500px) {
+    .container {
+      padding: 10px;
+    }
   }
   /* Per Anker angesprungenes Spiel (z. B. #thirtyone von Steam) hervorheben */
   .card:target img {
