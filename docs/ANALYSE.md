@@ -27,7 +27,7 @@ Weitere Seiten gibt es nicht. Kein `.htaccess` im Ordner (Server antwortet auf `
 - **Kein externes CSS/JS**, keine Libraries, keine Webfonts. Inline-`<style>` in `infos.php`, dazu viel Legacy-Markup (`<font>`, `align=`, `<table>` im Footer, Tippfehler `wdith=100%`).
 - Ungültiges Markup: `<p><h2 …>…</h3></p>` (Zeile 65), `.textbox`-Klasse ohne CSS.
 - **Charset-Konflikt:** Server sendet `Content-Type: text/html; charset=iso-8859-1`, `infos.php` deklariert `<meta charset="UTF-8">` und ist UTF-8 gespeichert. Der HTTP-Header gewinnt. Heute unsichtbar, weil alle Umlaute nur in CSS-Kommentaren stehen und © als Entity (`&#9400;`) kodiert ist. **Jeder sichtbare Nicht-ASCII-Text würde falsch dargestellt** → Abhilfe: `header('Content-Type: text/html; charset=utf-8');` in PHP oder HTML-Entities.
-- Zeilenenden auf dem Server: CRLF; im Repo LF (`.gitattributes`), `.reg` unverändert CRLF.
+- Zeilenenden: PHP-Dateien sind auf dem Server bereits LF; `mcimp3wavextension2.reg` ist CRLF, `mcimp3wavextension.reg` LF. Das Repo ist byte-identisch zum Server (`.reg` als `-text`).
 
 ## 3. Pfade und Links bei Deployment in einen Unterordner `/26/`
 
